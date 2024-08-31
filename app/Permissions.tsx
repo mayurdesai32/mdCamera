@@ -52,7 +52,7 @@ const Permissions = () => {
       <Stack.Screen options={{ headerTitle: "permissions" }} />
       <View style={styles.container}>
         <View style={styles.spacer} />
-        <Text style={styles.subtitle}>
+        <Text style={{ ...styles.subtitle, color: "white" }}>
           MDCAMERA needs access to few permission in order to work properly.
         </Text>
         <View style={styles.row}>
@@ -69,8 +69,10 @@ const Permissions = () => {
         >
           <Ionicons name="camera-outline" size={ICON_SIZE} color={"gray"} />
           <View style={styles.permissionText}>
-            <Text>Camera</Text>
-            <Text>Used for taking photos and videos.</Text>
+            <Text style={styles.footNoteText}>Camera</Text>
+            <Text style={styles.footNoteText}>
+              Used for taking photos and videos.
+            </Text>
           </View>
           <Switch
             trackColor={{ true: "orange" }}
@@ -83,8 +85,10 @@ const Permissions = () => {
         >
           <Ionicons name="camera-outline" size={ICON_SIZE} color={"gray"} />
           <View style={styles.permissionText}>
-            <Text>Microphone</Text>
-            <Text>Used for taking recording videos.</Text>
+            <Text style={styles.footNoteText}>Microphone</Text>
+            <Text style={styles.footNoteText}>
+              Used for taking recording videos.
+            </Text>
           </View>
           <Switch
             trackColor={{ true: "orange" }}
@@ -97,8 +101,10 @@ const Permissions = () => {
         >
           <Ionicons name="camera-outline" size={ICON_SIZE} color={"gray"} />
           <View style={styles.permissionText}>
-            <Text>Library</Text>
-            <Text>Used for saving, viewing and more.</Text>
+            <Text style={styles.footNoteText}>Library</Text>
+            <Text style={styles.footNoteText}>
+              Used for saving, viewing and more.
+            </Text>
           </View>
           <Switch
             trackColor={{ true: "orange" }}
@@ -129,12 +135,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    justifyContent: "center",
   },
   subtitle: {
     textAlign: "center",
   },
-  footNote: { fontSize: 12, fontWeight: "bold", letterSpacing: 2 },
-  row: { flexDirection: "row", alignItems: "center", gap: 6 },
+  footNote: {
+    fontSize: 12,
+    fontWeight: "bold",
+    letterSpacing: 2,
+    color: "white",
+  },
+
+  footNoteText: { color: "rgba(255,255,255,0.7)" },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+  },
   spacer: { marginVertical: 8 },
   PermissionContainer: {
     backgroundColor: "#ffffff20",
@@ -149,5 +167,6 @@ const styles = StyleSheet.create({
     borderColor: "white",
     borderRadius: 50,
     alignSelf: "center",
+    marginTop: 30,
   },
 });

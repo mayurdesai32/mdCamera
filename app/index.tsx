@@ -116,15 +116,19 @@ const HomeScreen = () => {
           exposure={exposure}
         />
       ) : (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: "black" }}>
           {/* display */}
-          <View style={{ flex: 0.7 }}>
-            <Text>Max FPS:{device.formats[0].maxFps}</Text>
-            <Text>
+          <View style={{ flex: 0.7, backgroundColor: "black" }}>
+            <Text style={{ color: "rgba(255,255,255,0.7)" }}>
+              Max FPS:{device.formats[0].maxFps}
+            </Text>
+            <Text style={{ color: "rgba(255,255,255,0.7)" }}>
               Width:{device.formats[0].photoWidth} Height:
               {device.formats[0].photoHeight}
             </Text>
-            <Text>Camera:{device.name}</Text>
+            <Text style={{ color: "rgba(255,255,255,0.7)" }}>
+              Camera: {cameraPosition}
+            </Text>
           </View>
           {/* middle section */}
           <View
@@ -132,6 +136,7 @@ const HomeScreen = () => {
               flex: 0.7,
               flexDirection: "row",
               justifyContent: "space-evenly",
+              backgroundColor: "black",
             }}
           >
             <CameraButton
@@ -173,6 +178,7 @@ const HomeScreen = () => {
               flexDirection: "row",
               justifyContent: "space-evenly",
               alignItems: "center",
+              backgroundColor: "black",
             }}
           >
             <CameraButton
